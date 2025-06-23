@@ -6,12 +6,16 @@ load_dotenv()
 
 from aiogram import Bot, Dispatcher
 
-# надо будет импортировать Роутер
+from code_qr.qr_handlers import qr
+
+
+
+
 
 async def main():
     bot = Bot(token=os.getenv('TOKEN'))
     dp = Dispatcher()
-    dp.include_router()
+    dp.include_router(qr)
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
