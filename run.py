@@ -9,9 +9,6 @@ from aiogram import Bot, Dispatcher
 from code_qr.qr_handlers import qr
 
 
-
-
-
 async def main():
     bot = Bot(token=os.getenv('TOKEN'))
     dp = Dispatcher()
