@@ -16,8 +16,8 @@ def result(name_inst, lst_col, dataframe, indx):
         if inst == name_inst:
             for col in dataframe.columns:
                 if col in lst_col:
-                    return f'{col}: {dataframe[col][indx]}'
-            return f'Итог: {dataframe[dataframe.columns[-2]][indx]}'
+                    return f'{col}: {dataframe[col][indx]}'           # Здесь неправильно работает
+            return f'Итог: {dataframe[dataframe.columns[-2]][indx]}'  # программа, с return
 
 @rt.message(F.document)
 async def report(message: Message):
