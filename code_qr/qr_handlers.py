@@ -1,12 +1,8 @@
 from aiogram import Router, F
-from aiogram.filters import CommandStart, Command
 from aiogram.types import Message, FSInputFile
-from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import State, StatesGroup
 
 import qrcode
 import cv2
-
 
 detector = cv2.QRCodeDetector()
 
