@@ -20,8 +20,8 @@ def result(name_inst, lst_col, dataframe, indx):
         if inst == name_inst:
             for col in dataframe.columns:
                 if col in lst_col:
-                    res += f'{col}: {dataframe[col][indx]}\n'
-            res += f'Итог: {dataframe[dataframe.columns[-2]][indx]}'
+                    res += f'{col}: {form(dataframe[col][indx])}\n'
+            res += f'Итог: {form(dataframe[dataframe.columns[-2]][indx])}'
             return res
 
 @rt.message(F.document)
@@ -37,3 +37,8 @@ async def report(message: Message):
                          f'{result('SKAZKA всего', heads_s, df, s_index)}\n'
                          f'\nХимки\n'
                          f'{result('HIMKI всего', heads_h, df, h_index)}')
+'''
+Работает, но
+Если по какому-то заголовку вообще не было продаж, он не добавит его в отчет, даже с 0,00 руб
+Не умет писать дату
+'''
